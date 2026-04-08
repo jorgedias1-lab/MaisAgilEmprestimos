@@ -3,180 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mais Ágil Financeira - Alagoinhas-BA</title>
+    <title>+áAgil Financeira - Alagoinhas/BA - Soluções em Crédito</title>
+    
+    <link rel="icon" type="image/png" href="logo-icon.png"> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00bfa5; /* Verde Água do Logo */
-            --dark: #263238; /* Grafite */
-            --light: #f4f7f6;
+            /* Paleta extraída diretamente do logotipo */
+            --primary-teal: #00d1c1; /* Verde água vibrante */
+            --dark-grafite: #263238; /* Grafite escuro e sério */
+            --light-bg: #f8faf9;
             --white: #ffffff;
+            --text-main: #333333;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-        
-        body { background-color: var(--light); color: #333; line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--text-main); line-height: 1.6; }
 
-        /* Header */
+        /* Header e Logo */
         header {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0; z-index: 1000;
+            background-color: var(--white);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        .header-container {
-            width: 90%; max-width: 1200px; margin: 0 auto;
+        .nav-container {
+            width: 92%; max-width: 1200px; margin: 0 auto;
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        .brand { color: var(--primary); font-weight: 800; font-size: 1.4rem; text-transform: uppercase; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 50px; width: auto; } /* Exibe o logo completo */
 
         /* Hero */
         .hero {
-            background: linear-gradient(rgba(38, 50, 56, 0.9), rgba(38, 50, 56, 0.9)), url('https://images.unsplash.com/photo-1573163281530-5be9c89b997e?auto=format&fit=crop&q=80&w=1200');
-            background-size: cover; background-position: center;
+            background: linear-gradient(135deg, var(--dark-grafite) 0%, #37474f 100%);
             color: var(--white); padding: 80px 5%; text-align: center;
         }
 
-        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--primary); }
-        .rating { margin-bottom: 25px; font-size: 0.9rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero h1 span { color: var(--primary-teal); font-weight: 800; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; }
 
         /* Botão WhatsApp */
         .btn-whats {
-            background: #25d366; color: white; text-decoration: none;
-            padding: 15px 30px; border-radius: 50px; font-weight: bold;
-            display: inline-flex; align-items: center; gap: 10px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: 0.3s;
+            background-color: #25d366; color: white;
+            padding: 18px 35px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; display: inline-flex; align-items: center; gap: 12px;
+            font-size: 1.2rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
         }
-        .btn-whats:hover { transform: translateY(-3px); background: #1eb954; }
+        .btn-whats:hover { transform: translateY(-3px) scale(1.02); background-color: #1eb954; }
 
-        /* Seções */
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 60px 0; }
-        h2 { text-align: center; margin-bottom: 40px; color: var(--dark); }
+        /* Grade de Produtos */
+        .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; color: var(--dark-grafite); }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .product-card {
+            background: var(--white); border-radius: 16px; padding: 30px; text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-top: 5px solid var(--primary-teal);
+            transition: 0.3s ease; display: flex; flex-direction: column; align-items: center;
+        }
+        .product-card:hover { transform: translateY(-7px); box-shadow: 0 8px 25px rgba(0,0,0,0.07); }
+        .product-card i { color: var(--primary-teal); font-size: 2.8rem; margin-bottom: 20px; }
+        .product-card h3 { color: var(--dark-grafite); margin-bottom: 12px; font-size: 1.3rem; }
+        .product-card p { font-size: 0.95rem; opacity: 0.8; }
 
-        /* Cards Serviços */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 180px; object-fit: cover; }
-        .card-content { padding: 20px; }
-        .card-content i { color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
-
-        /* Prova Social */
-        .bg-white { background: var(--white); }
-        .review { border-left: 4px solid var(--primary); padding: 15px; margin-bottom: 20px; background: var(--light); border-radius: 0 8px 8px 0; }
-
-        /* Localização e Mapa */
-        .contact-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start; }
+        /* Fachada e Localização */
+        .white-section { background-color: var(--white); }
+        .location-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+        
+        .fachada-img { 
+            width: 100%; border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            object-fit: cover; height: 350px;
+        }
+        
         .info-list { list-style: none; }
-        .info-list li { margin-bottom: 15px; display: flex; gap: 10px; }
-        .info-list i { color: var(--primary); margin-top: 5px; }
-        .map-frame { border-radius: 15px; overflow: hidden; height: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .info-list li { margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start; }
+        .info-list i { color: var(--primary-teal); font-size: 1.2rem; margin-top: 4px; }
+        .maps-link { color: var(--primary-teal); font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; }
 
-        footer { background: var(--dark); color: var(--white); padding: 40px 0; text-align: center; font-size: 0.9rem; }
-        .insta-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+        /* Footer */
+        footer { background-color: var(--dark-grafite); color: var(--white); padding: 50px 5%; text-align: center; font-size: 0.9rem; }
+        .footer-logo { height: 40px; width: auto; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.8; } /* Logo branco no rodapé */
+        .social-link { color: var(--primary-teal); text-decoration: none; font-weight: bold; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 1.8rem; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .btn-whats { width: 100%; justify-content: center; font-size: 1.1rem; }
+            .fachada-img { height: 250px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-container">
-            <div class="brand"><i class="fas fa-chart-line"></i> Mais Ágil</div>
-            <a href="https://wa.me/5575999261501" class="insta-link" style="font-size: 0.8rem;">(75) 99926-1501</a>
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <img src="logo-completo.png" alt="+áAgil Financeira Logo" class="logo-img">
+            </a>
+            <a href="tel:75999261501" class="social-link" style="font-size: 0.85rem;">(75) 99926-1501</a>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Crédito Inteligente em Alagoinhas</h1>
-        <p>Empréstimos Consignados e Pessoais com rapidez e confiança.</p>
-        <div class="rating">
-            <i class="fas fa-star" style="color: #f1c40f;"></i> 4.8 | 13 avaliações no Google
+        <div class="container" style="padding:0;">
+            <h1>O crédito certo na hora que você <span>+ precisa</span></h1>
+            <p>Especialistas em Alagoinhas com soluções rápidas para aposentados, servidores e trabalhadores CLT.</p>
+            <br>
+            <a href="https://wa.me/5575999261501?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20fazer%20uma%20simulação%20de%20crédito." class="btn-whats" target="_blank">
+                <i class="fab fa-whatsapp"></i> Simular Agora pelo WhatsApp
+            </a>
         </div>
-        <a href="https://wa.me/5575999261501?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20fazer%20uma%20simulação%20de%20crédito." class="btn-whats" target="_blank">
-            <i class="fab fa-whatsapp"></i> Simular agora via WhatsApp
-        </a>
     </section>
 
     <div class="container">
-        <h2>O que oferecemos</h2>
-        <div class="services-grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=400" alt="Consignado">
-                <div class="card-content">
-                    <i class="fas fa-id-card"></i>
-                    <h3>Consignado</h3>
-                    <p>Taxas reduzidas para aposentados, pensionistas e servidores.</p>
-                </div>
+        <h2 class="section-title">Nossas Soluções de Crédito</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <i class="fas fa-user-check"></i>
+                <h3>Consignado INSS</h3>
+                <p>Taxas imbatíveis para aposentados e pensionistas com desconto em folha.</p>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?auto=format&fit=crop&q=80&w=400" alt="FGTS">
-                <div class="card-content">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Saque FGTS</h3>
-                    <p>Antecipe seu saldo do saque-aniversário na hora.</p>
-                </div>
+            <div class="product-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Saque FGTS</h3>
+                <p>Antecipe suas parcelas do saque-aniversário agora mesmo, sem burocracia.</p>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e78b?auto=format&fit=crop&q=80&w=400" alt="Portabilidade">
-                <div class="card-content">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Portabilidade</h3>
-                    <p>Reduza o valor das parcelas do seu empréstimo atual.</p>
-                </div>
+            <div class="product-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Consignado CLT</h3>
+                <p>Crédito rápido para quem trabalha de carteira assinada há mais de 3 meses.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Conta de Energia</h3>
+                <p>Empréstimo prático debitado diretamente na sua conta de luz Coelba.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Bolsa Família</h3>
+                <p>Soluções de crédito exclusivas e acessíveis para beneficiários do programa.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-sync-alt"></i>
+                <h3>Portabilidade</h3>
+                <p>Traga seu contrato atual e reduza o valor das suas parcelas.</p>
             </div>
         </div>
     </div>
 
-    <section class="bg-white">
-        <div class="container">
-            <h2>Quem confia na Mais Ágil</h2>
-            <div class="review">
-                <p>"Funcionários prestativos e proativos nas resoluções das demandas."</p>
-                <strong>⭐⭐⭐⭐⭐ - Avaliação no Google</strong>
-            </div>
-            <div class="review">
-                <p>"Excelente atendimento, fácil resolução e agilidade, estou muito satisfeito!"</p>
-                <strong>⭐⭐⭐⭐⭐ - Avaliação no Google</strong>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <h2>Localização e Contato</h2>
-        <div class="contact-box">
-            <div class="contact-info">
+    <section class="white-section">
+        <div class="container location-box">
+            <img src="fachada-loja.png" alt="Fachada da +áAgil Financeira Alagoinhas" class="fachada-img">
+            <div class="info-content">
+                <h2 style="text-align: left; margin-bottom: 30px;">Visite Nossa Loja</h2>
                 <ul class="info-list">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Rua Milton José Ornelas da Silva, 36 - Centro<br>Alagoinhas - BA, 48000-173</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone-alt"></i>
-                        <span>(75) 99926-1501</span>
+                        <span><strong>Endereço:</strong><br>Rua Milton José Ornelas da Silva, 36 - Centro<br>Alagoinhas - BA, 48000-173</span>
                     </li>
                     <li>
                         <i class="fas fa-clock"></i>
-                        <span>Aberto de Segunda a Sexta até às 17:00</span>
+                        <span><strong>Horário de Atendimento:</strong><br>Segunda a Sexta-feira: até às 17:00</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-hashtag"></i>
+                        <span><strong>Siga-nos:</strong><br><a href="https://www.instagram.com/mais_agil.alagoinhas" class="social-link" target="_blank">@mais_agil.alagoinhas</a></span>
                     </li>
                 </ul>
-                <br>
-                <a href="https://www.google.com/maps?q=Mais+Agil+Financeira+Alagoinhas" target="_blank" class="insta-link"><i class="fas fa-directions"></i> Abrir no Google Maps</a>
-            </div>
-            <div class="map-frame">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1!2d-38.41!3d-12.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzQ4LjAiUyAzOMKwMjQnMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <a href="http://googleusercontent.com/maps.google.com/5" target="_blank" class="maps-link">
+                    <i class="fas fa-directions"></i> Traçar Rota no Google Maps
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
     <footer>
         <div class="container" style="padding: 0;">
-            <p><strong>Mais Ágil Financeira - Empréstimos</strong></p>
-            <p>Siga-nos: <a href="https://www.instagram.com/mais_agil.alagoinhas" class="insta-link" target="_blank">@mais_agil.alagoinhas</a></p>
-            <p style="margin-top: 20px; opacity: 0.6;">© 2026 Alagoinhas - Bahia</p>
+            <img src="logo-completo.png" alt="+áAgil Logo Footer" class="footer-logo">
+            <p><strong>+áAgil Financeira - Alagoinhas/BA</strong></p>
+            <p style="margin-top: 10px; opacity: 0.7;">Soluções em Créditos, Seguros, Consórcios e Financiamentos.</p>
+            <p style="margin-top: 25px; opacity: 0.5; font-size: 0.8rem;">© 2026 Todos os direitos reservados.</p>
         </div>
     </footer>
 
