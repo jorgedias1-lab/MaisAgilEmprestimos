@@ -3,190 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>+Ágil Empréstimos | Alagoinhas</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>+Ágil Empréstimos</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f4f6f8;
-    color: #333;
+    margin:0;
+    font-family: Arial;
+    background:#f5f5f5;
 }
 
-header {
-    background: linear-gradient(135deg, #0a8f3c, #00c853);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+/* MENU */
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:white;
 }
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+nav img {
+    width:120px;
 }
 
-header p {
-    font-size: 18px;
-    opacity: 0.9;
+.menu a {
+    margin:0 10px;
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    background: #25d366;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: 0.3s;
+.btn-whats {
+    background:#25d366;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    text-decoration:none;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+/* HERO */
+.hero {
+    background:linear-gradient(135deg,#0a8f3c,#00c853);
+    color:white;
+    padding:50px 20px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
 }
 
-section {
-    padding: 60px 20px;
-    text-align: center;
+.hero-text {
+    max-width:500px;
 }
 
-h2 {
-    margin-bottom: 30px;
+.hero h1 {
+    font-size:40px;
+}
+
+.hero img {
+    width:300px;
+}
+
+/* PRODUTOS */
+.section {
+    padding:40px 20px;
+    text-align:center;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
 .card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    background:white;
+    padding:20px;
+    border-radius:10px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* LOCAL */
+.local {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-.highlight {
-    background: #0a8f3c;
-    color: white;
-    border-radius: 15px;
-    padding: 40px 20px;
-}
-
-footer {
-    background: #111;
-    color: white;
-    padding: 20px;
-}
-
+/* WHATS FLOAT */
 .whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    color: white;
-    padding: 18px;
-    border-radius: 50%;
-    font-size: 22px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
 }
 
-/* animação */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
+@media(max-width:768px){
+    .local {
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>💰 Crédito rápido e fácil</h1>
-    <p>Sem burocracia • Aprovação rápida • Atendimento imediato</p>
-    <a class="btn" href="https://wa.me/5575999261501?text=Olá,%20quero%20simular%20um%20empréstimo">
-        SIMULAR NO WHATSAPP
-    </a>
-</header>
+<!-- MENU -->
+<nav>
+    <img src="logo.png">
+    <div class="menu">
+        <a href="#">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#local">Localização</a>
+    </div>
+    <a class="btn-whats" href="https://wa.me/55SEUNUMERO">Simular</a>
+</nav>
 
-<section class="fade">
-    <h2>Por que escolher a +Ágil?</h2>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>DINHEIRO NA CONTA HOJE!</h1>
+        <p>Sem burocracia • Aprovação rápida</p>
+        <a class="btn-whats" href="https://wa.me/55SEUNUMERO">Chamar no WhatsApp</a>
+    </div>
+    <img src="banner.png">
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos" class="section">
+    <h2>Nossos Produtos</h2>
+
     <div class="grid">
-        <div class="card">⚡ Liberação rápida</div>
-        <div class="card">📄 Sem burocracia</div>
-        <div class="card">🤝 Atendimento humanizado</div>
-        <div class="card">💳 Parcelas acessíveis</div>
+        <div class="card">
+            <h3>Empréstimo Consignado</h3>
+            <p>Aposentados e servidores</p>
+        </div>
+
+        <div class="card">
+            <h3>Empréstimo CLT</h3>
+            <p>Para carteira assinada</p>
+        </div>
+
+        <div class="card">
+            <h3>Conta de Energia</h3>
+            <p>Use sua conta de luz</p>
+        </div>
+
+        <div class="card">
+            <h3>Antecipação FGTS</h3>
+            <p>Saque aniversário</p>
+        </div>
     </div>
 </section>
 
-<section class="highlight fade">
-    <h2>Atendemos diversos perfis</h2>
-    <p>Aposentados • Servidores • FGTS • Autônomos</p>
-</section>
+<!-- LOCALIZAÇÃO -->
+<section id="local" class="section">
+    <h2>Onde Estamos</h2>
 
-<section class="fade">
-    <h2>Como funciona</h2>
-    <div class="grid">
-        <div class="card">1️⃣ Clique no botão</div>
-        <div class="card">2️⃣ Envie seus dados</div>
-        <div class="card">3️⃣ Receba sua simulação</div>
-        <div class="card">4️⃣ Dinheiro liberado 💸</div>
+    <div class="local">
+        <div>
+            <p>📍 Praça da Bandeira, 108<br>Alagoinhas - BA</p>
+
+            <iframe 
+                src="https://www.google.com/maps?q=alagoinhas&output=embed"
+                width="100%" height="250">
+            </iframe>
+        </div>
+
+        <div>
+            <img src="fachada.jpg" width="100%">
+        </div>
     </div>
 </section>
 
-<section class="fade">
-    <h2>Clientes satisfeitos</h2>
-    <div class="grid">
-        <div class="card">⭐⭐⭐⭐⭐<br>“Atendimento rápido e confiável!”</div>
-        <div class="card">⭐⭐⭐⭐⭐<br>“Consegui meu dinheiro no mesmo dia!”</div>
-    </div>
-</section>
-
-<section class="highlight fade">
-    <h2>🚨 Precisa de dinheiro urgente?</h2>
-    <a class="btn" href="https://wa.me/5575999261501?text=Olá,%20quero%20simular%20um%20empréstimo">
-        FALAR NO WHATSAPP AGORA
-    </a>
-</section>
-
-<footer>
-    <p>+Ágil Empréstimos | Alagoinhas</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/5575999261501?text=Olá,%20quero%20simular%20um%20empréstimo">
-💬
-</a>
-
-<script>
-const elements = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-
-        if(position < screen - 100){
-            el.classList.add('show');
-        }
-    });
-});
-</script>
+<!-- WHATS -->
+<a class="whatsapp" href="https://wa.me/55SEUNUMERO">💬</a>
 
 </body>
 </html>
