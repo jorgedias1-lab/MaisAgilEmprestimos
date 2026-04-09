@@ -3,146 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+áAgil Empréstimos - Alagoinhas/BA</title>
+    <title>+áAgil Financeira | Empréstimos em Alagoinhas-BA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-green: #28a745;
-            --dark-green: #1b5e20;
+            --primary: #28a745;
+            --dark: #1b5e20;
             --yellow: #ffeb3b;
-            --insta-color: #E1306C;
-            --maps-color: #4285F4;
-            --text-dark: #333;
+            --text: #333;
+            --light: #f4f7f6;
+            --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { background-color: #fff; color: var(--text-dark); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--white); color: var(--text); line-height: 1.6; }
 
-        /* Top Nav - Restaurado */
-        .top-nav {
-            background: #fff; padding: 10px 5%; display: flex;
-            justify-content: space-between; align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
+        /* HEADER PROFISSIONAL */
+        header {
+            background: var(--white);
+            padding: 12px 5%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky; top: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .logo img { height: 50px; }
-        .menu { display: flex; gap: 20px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; }
-        .menu a { text-decoration: none; color: var(--text-dark); }
-        .btn-top-whats {
-            background: var(--primary-green); color: #fff; padding: 10px 18px;
-            border-radius: 5px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: bold;
-        }
+        .logo img { height: 55px; width: auto; }
+        .nav-menu { display: flex; gap: 25px; }
+        .nav-menu a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-menu a:hover { color: var(--primary); }
 
-        /* Banner Hero */
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200');
-            background-size: cover; background-position: center; color: #fff; padding: 60px 5%;
+            background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(40, 167, 69, 0.8) 100%), url('https://images.unsplash.com/photo-1573163281530-5be9c89b997e?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover; background-position: center;
+            color: var(--white); padding: 100px 5%; text-align: center;
         }
-        .hero h1 { font-size: 2.8rem; color: var(--yellow); text-transform: uppercase; line-height: 1.1; }
-        .hero h2 { font-size: 2rem; margin-bottom: 20px; }
+        .hero h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; letter-spacing: -1px; }
+        .hero h1 span { color: var(--yellow); }
+        .hero p { font-size: 1.3rem; margin-bottom: 35px; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-        /* Grade de Produtos - 6 Cards */
-        .section-padding { padding: 50px 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
-        .p-card { border-radius: 12px; padding: 20px; text-align: left; border: 1px solid #eee; }
-        .p-card h3 { font-size: 0.95rem; margin-bottom: 8px; text-transform: uppercase; color: #111; }
-        .p-card p { font-size: 0.85rem; opacity: 0.8; }
-        .p-card i { font-size: 1.8rem; margin-bottom: 12px; display: block; }
-
-        .c-consignado { background: #e8f5e9; border-top: 5px solid #2e7d32; }
-        .c-clt { background: #e3f2fd; border-top: 5px solid #1565c0; }
-        .c-energia { background: #fff3e0; border-top: 5px solid #ef6c00; }
-        .c-fgts { background: #f3e5f5; border-top: 5px solid #7b1fa2; }
-        .c-bolsa { background: #fffde7; border-top: 5px solid #fbc02d; }
-        .c-portabilidade { background: #fce4ec; border-top: 5px solid #c2185b; }
-
-        /* Seção de Contato e Botões de Ação */
-        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 5%; background: #f9f9f9; }
-        .action-buttons { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
-        
-        .btn-action {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 15px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s;
+        .btn-main {
+            background: var(--primary); color: white; padding: 18px 40px; border-radius: 50px;
+            text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-flex;
+            align-items: center; gap: 12px; box-shadow: 0 10px 20px rgba(40,167,69,0.3); transition: 0.3s;
         }
-        .btn-insta { background: var(--insta-color); }
-        .btn-maps { background: var(--maps-color); }
-        .btn-phone { background: var(--text-dark); }
-        .btn-action:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(40,167,69,0.4); }
 
-        .map-box { height: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        /* SERVIÇOS EM GRID */
+        .section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--dark); text-transform: uppercase; }
+        .section-header p { color: #777; font-weight: 500; }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .menu { display: none; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .s-card {
+            padding: 35px; border-radius: 20px; text-align: left; transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.05); position: relative; overflow: hidden;
+        }
+        .s-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .s-card i { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .s-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #111; }
+        .s-card p { font-size: 0.95rem; color: #555; }
+
+        /* Estilização Individual dos Cards baseada no seu pedido */
+        .c1 { background: #e8f5e9; border-top: 6px solid #2e7d32; }
+        .c2 { background: #e3f2fd; border-top: 6px solid #1565c0; }
+        .c3 { background: #fff3e0; border-top: 6px solid #ef6c00; }
+        .c4 { background: #f3e5f5; border-top: 6px solid #7b1fa2; }
+        .c5 { background: #fffde7; border-top: 6px solid #fbc02d; }
+        .c6 { background: #fce4ec; border-top: 6px solid #c2185b; }
+
+        /* CONTATO E AÇÕES */
+        .contact-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: start; }
+        .action-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .btn-act {
+            padding: 15px; border-radius: 12px; color: white; text-decoration: none;
+            font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s;
+        }
+        .b-maps { background: #4285F4; grid-column: span 2; }
+        .b-phone { background: #333; }
+        .b-insta { background: #E1306C; }
+        .btn-act:hover { opacity: 0.9; transform: scale(1.02); }
+
+        .map-frame { border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        footer { background: #1a1a1a; color: white; padding: 60px 5%; text-align: center; }
+        .footer-logo { height: 45px; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.8; }
+
+        @media (max-width: 900px) {
+            .contact-layout { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .nav-menu { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="top-nav">
+    <header>
         <div class="logo"><img src="logo-completo.png" alt="+áAgil"></div>
-        <div class="menu">
-            <a href="#">Início</a>
-            <a href="#">Simular</a>
-            <a href="#">Vantagens</a>
-            <a href="#">Endereço</a>
-        </div>
-        <a href="https://wa.me/5575999261501" class="btn-top-whats">
-            <i class="fab fa-whatsapp"></i> WHATSAPP
+        <nav class="nav-menu">
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Localização</a>
+        </nav>
+        <a href="https://wa.me/5575999261501" class="nav-menu" style="color: var(--primary); font-weight: 800; text-decoration: none;">(75) 99926-1501</a>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>O crédito que você precisa <span>com a agilidade que você merece</span></h1>
+        <p>Especialistas em soluções financeiras em Alagoinhas. Dinheiro rápido na conta, sem burocracia e com as melhores taxas.</p>
+        <a href="https://wa.me/5575999261501?text=Olá!%20Vi%20seu%20site%20e%20quero%20fazer%20uma%20simulação." class="btn-main">
+            <i class="fab fa-whatsapp"></i> SIMULAR PELO WHATSAPP
         </a>
-    </nav>
+    </section>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Dinheiro na conta hoje!</h1>
-            <h2>SEM BUROCRACIA • RÁPIDO</h2>
-            <a href="https://wa.me/5575999261501" class="btn-top-whats" style="padding: 15px 30px; font-size: 1.1rem; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> SOLICITAR AGORA
-            </a>
+    <section class="section" id="servicos">
+        <div class="section-header">
+            <h2>Nossas Soluções</h2>
+            <p>Escolha a melhor opção para o seu perfil</p>
+        </div>
+        <div class="services-grid">
+            <div class="s-card c1"><i class="fas fa-university" style="color:#2e7d32"></i><h3>Consignado INSS</h3><p>Aposentados e pensionistas com as menores taxas do mercado.</p></div>
+            <div class="s-card c2"><i class="fas fa-briefcase" style="color:#1565c0"></i><h3>Consignado CLT</h3><p>Crédito para quem tem carteira assinada há mais de 3 meses.</p></div>
+            <div class="s-card c3"><i class="fas fa-bolt" style="color:#ef6c00"></i><h3>Conta de Luz</h3><p>Empréstimo prático com desconto direto na sua conta Coelba.</p></div>
+            <div class="s-card c4"><i class="fas fa-money-bill-wave" style="color:#7b1fa2"></i><h3>Saque FGTS</h3><p>Antecipe seu saldo do saque-aniversário sem precisar esperar.</p></div>
+            <div class="s-card c5"><i class="fas fa-hands-helping" style="color:#fbc02d"></i><h3>Bolsa Família</h3><p>Linhas de crédito exclusivas para beneficiários do programa.</p></div>
+            <div class="s-card c6"><i class="fas fa-sync-alt" style="color:#c2185b"></i><h3>Portabilidade</h3><p>Reduza as parcelas dos seus empréstimos atuais agora mesmo.</p></div>
         </div>
     </section>
 
-    <section class="section-padding">
-        <h2 style="color: var(--primary-green); text-transform: uppercase;">Nossas Soluções</h2>
-        <div class="products-grid">
-            <div class="p-card c-consignado"><i class="fas fa-university" style="color:#2e7d32"></i><h3>Consignado INSS</h3><p>Melhores taxas para aposentados.</p></div>
-            <div class="p-card c-clt"><i class="fas fa-briefcase" style="color:#1565c0"></i><h3>Consignado CLT</h3><p>Carteira assinada acima de 3 meses.</p></div>
-            <div class="p-card c-energia"><i class="fas fa-bolt" style="color:#ef6c00"></i><h3>Conta de Luz</h3><p>Débito direto na conta Coelba.</p></div>
-            <div class="p-card c-fgts"><i class="fas fa-money-bill-wave" style="color:#7b1fa2"></i><h3>Saque FGTS</h3><p>Antecipe seu saldo na hora.</p></div>
-            <div class="p-card c-bolsa"><i class="fas fa-hands-helping" style="color:#fbc02d"></i><h3>Bolsa Família</h3><p>Crédito para beneficiários.</p></div>
-            <div class="p-card c-portabilidade"><i class="fas fa-sync-alt" style="color:#c2185b"></i><h3>Portabilidade</h3><p>Reduza o valor das suas parcelas.</p></div>
-        </div>
-    </section>
-
-    <section class="contact-container">
-        <div>
-            <h2 style="color: var(--primary-green);">FALE CONOSCO</h2>
-            <p><i class="fas fa-map-marker-alt"></i> Rua Milton José Ornelas da Silva, 36 - Centro, Alagoinhas - BA</p>
+    <section class="section" style="background: var(--light);" id="contato">
+        <div class="contact-layout">
+            <div>
+                <h2 style="color: var(--dark); margin-bottom: 20px;">FALE CONOSCO</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 10px;"><strong><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Endereço:</strong><br>Rua Milton José Ornelas da Silva, 36 - Centro, Alagoinhas - BA</p>
+                <p style="font-size: 1.1rem;"><strong><i class="fas fa-clock" style="color: var(--primary);"></i> Atendimento:</strong><br>Segunda a Sexta-feira: até às 17:00</p>
+                
+                <div class="action-bar">
+                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.474643093202!2d-38.428784!3d-12.131234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7169623e654714d%3A0x6e7686561a34999!2sRua%20Milton%20Jose%20Ornelas%20da%20Silva%2C%2036%20-%20Centro%2C%20Alagoinhas%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr2" target="_blank" class="btn-act b-maps">
+                        <i class="fas fa-directions"></i> TRAÇAR ROTA NO GOOGLE MAPS
+                    </a>
+                    <a href="tel:75999261501" class="btn-act b-phone">
+                        <i class="fas fa-phone-alt"></i> LIGAR AGORA
+                    </a>
+                    <a href="https://www.instagram.com/mais_agil.alagoinhas" target="_blank" class="btn-act b-insta">
+                        <i class="fab fa-instagram"></i> INSTAGRAM
+                    </a>
+                </div>
+                
+                <img src="fachada-loja.png" alt="Fachada +áAgil" style="width:100%; border-radius:20px; margin-top: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+            </div>
             
-            <div class="action-buttons">
-                <a href="tel:75999261501" class="btn-action btn-phone">
-                    <i class="fas fa-phone-alt"></i> LIGAR AGORA
-                </a>
-                <a href="https://www.instagram.com/mais_agil.alagoinhas" target="_blank" class="btn-action btn-insta">
-                    <i class="fab fa-instagram"></i> SEGUIR NO INSTAGRAM
-                </a>
-                <a href="https://www.google.com/maps/contrib/114549720821521915488/reviews" target="_blank" class="btn-action btn-maps">
-                    <i class="fas fa-directions"></i> TRAÇAR ROTA NO MAPS
-                </a>
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUQyNWFIYW93RRAB!2m1!1s0x716bde6d5df6841:0x92354754c37e06c1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
-            <div style="margin-top: 20px;">
-                <img src="fachada-loja.png" alt="Fachada Mais Ágil" style="width:100%; border-radius:10px;">
-            </div>
-        </div>
-        
-        <div class="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.474643093202!2d-38.428784!3d-12.131234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7169623e654714d%3A0x6e7686561a34999!2sRua%20Milton%20Jose%20Ornelas%20da%20Silva%2C%2036%20-%20Centro%2C%20Alagoinhas%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <footer style="padding: 20px; text-align: center; background: #eee; font-size: 0.8rem;">
-        <img src="logo-completo.png" alt="Logo" style="height: 35px; opacity: 0.6; margin-bottom: 10px;"><br>
-        © 2026 +áAgil Financeira - Alagoinhas/BA. Todos os direitos reservados.
+    <footer>
+        <img src="logo-completo.png" alt="Logo" class="footer-logo">
+        <p><strong>+áAgil Financeira - Alagoinhas/BA</strong></p>
+        <p style="opacity: 0.6; margin-top: 10px;">Soluções em Créditos, Seguros e Financiamentos.</p>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.4;">© 2026 Todos os direitos reservados.</p>
     </footer>
 
 </body>
