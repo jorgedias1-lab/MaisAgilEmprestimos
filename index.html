@@ -131,21 +131,29 @@
         </div>
     </section>
 
-    <section class="section" style="background: var(--light);" id="contato">
+    <section class="section" style="background: var(--light); padding: 60px 5%;" id="contato">
         <div class="contact-layout">
-            <div>
-                <h2 style="color: var(--dark); margin-bottom: 20px;">FALE CONOSCO</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 10px;"><strong><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Endereço:</strong><br>Rua Milton José Ornelas da Silva, 36 - Centro, Alagoinhas - BA</p>
-                <p style="font-size: 1.1rem;"><strong><i class="fas fa-clock" style="color: var(--primary);"></i> Atendimento:</strong><br>Segunda a Sexta-feira: até às 17:00</p>
+            <div class="info-texto">
+                <h2 style="color: var(--dark); margin-bottom: 20px; font-size: 2.2rem;">FALE CONOSCO</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                    <strong><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Endereço:</strong><br>
+                    Rua Milton José Ornelas da Silva, 36 - Centro, Alagoinhas - BA
+                </p>
+                <p style="font-size: 1.1rem; margin-bottom: 25px;">
+                    <strong><i class="fas fa-clock" style="color: var(--primary);"></i> Atendimento:</strong><br>
+                    Segunda a Sexta-feira: 9:00 às 13:00 / 14:30 às 17:00
+                </p>
                 
-                <div class="action-bar">
-                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.474643093202!2d-38.428784!3d-12.131234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7169623e654714d%3A0x6e7686561a34999!2sRua%20Milton%20Jose%20Ornelas%20da%20Silva%2C%2036%20-%20Centro%2C%20Alagoinhas%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr2" target="_blank" class="btn-act b-maps">
+                <div class="action-bar" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Mais+%C3%81gil+Financeira+Alagoinhas" target="_blank" class="btn-act b-maps" style="grid-column: span 2; background: #4285F4; padding: 15px; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px;">
                         <i class="fas fa-directions"></i> TRAÇAR ROTA NO GOOGLE MAPS
                     </a>
-                    <a href="tel:75999261501" class="btn-act b-phone">
+                    
+                    <a href="tel:75999261501" class="btn-act b-phone" style="background: #333; padding: 15px; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px;">
                         <i class="fas fa-phone-alt"></i> LIGAR AGORA
                     </a>
-                    <a href="https://www.instagram.com/mais_agil.alagoinhas" target="_blank" class="btn-act b-insta">
+                    
+                    <a href="https://www.instagram.com/mais_agil.alagoinhas" target="_blank" class="btn-act b-insta" style="background: #E1306C; padding: 15px; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px;">
                         <i class="fab fa-instagram"></i> INSTAGRAM
                     </a>
                 </div>
@@ -153,8 +161,16 @@
                 <img src="fachada-loja.png" alt="Fachada +áAgil" style="width:100%; border-radius:20px; margin-top: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
             </div>
             
-            <div class="map-frame">
-                <iframe src="https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUQyNWFIYW93RRAB!2m1!1s0x716bde6d5df6841:0x92354754c37e06c1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-frame" style="border-radius: 20px; overflow: hidden; height: 400px; margin-top: 20px; border: 1px solid #ddd;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.441864047644!2d-38.4239866!3d-12.1384799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7143bd96d5df6841%3A0x92354754c37e06c1!2sMais%20%C3%81gil%20Financeira!5e0!3m2!1spt-BR!2sbr!4v1712770000000!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
